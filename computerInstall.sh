@@ -26,8 +26,6 @@ if [ "$graphicInstall" = false ] ; then
   done
 fi
 
-
-
 # Base
 apt-get update
 apt-get upgrade
