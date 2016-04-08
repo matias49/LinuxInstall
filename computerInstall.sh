@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "This script MUST BE run as root."
 echo "Do you want a graphical interface (i3 + startx)?"
 select graphic in "Yes" "No"; do
   case $graphic in
@@ -26,10 +26,10 @@ if [ "$graphicInstall" = false ] ; then
   done
 fi
 # Base
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install curl git sudo
+apt-get update
+apt-get upgrade
+apt-get install curl git
 
 # ZSH + Oh My ZSH avec thème custom
-sudo apt-get install zsh
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+apt-get install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
