@@ -47,4 +47,4 @@ sed -rin 's/robbyrussell/funkycustom/' ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sed -rin 's/plugins=\(git\)/plugins=(git zsh-syntax-highlighting)/' ~/.zshrc
 
-source ~/.zshrc
+zsh -c 'source ~/.zshrc'
