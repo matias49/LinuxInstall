@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "This script MUST BE run as root."
-echo "Do you want a graphical interface (i3 + startx)?"
+echo "Do you want a graphical interface (i3 + lightdm)?"
 select graphic in "Yes" "No"; do
   case $graphic in
     Yes )
@@ -48,3 +48,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sed -rin 's/plugins=\(git\)/plugins=(git zsh-syntax-highlighting)/' ~/.zshrc
 
 zsh -c 'source ~/.zshrc'
+
+if [ "$graphicInstall" = true ] ; then
+  apt-get install i3 lightdm -y
+  dpkg-reconfigure lightdm
+fi
