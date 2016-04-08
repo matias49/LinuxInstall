@@ -3,11 +3,11 @@
 echo "Do you want a graphical interface (i3 + startx)?"
 select graphic in "Yes" "No"; do
   case $graphic in
-    Yes )
-      graphicInstall = true;
+    Yes)
+      graphicInstall = true
       break;;
-    No )
-      graphicInstall = false;
+    No)
+      graphicInstall = false
       break;;
     esac
 done
@@ -16,10 +16,10 @@ if[ "$graphicInstall" = false] ; then
   select server in "Yes" "No"; do
     case $server in
       Yes )
-        serverInstall = true;
+        serverInstall = true
         break;;
       No )
-        serverInstall = false;
+        serverInstall = false
         break;;
       esac
   done
