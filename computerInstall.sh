@@ -25,11 +25,28 @@ if [ "$graphicInstall" = false ] ; then
       esac
   done
 fi
+
+
+
 # Base
 apt-get update
 apt-get upgrade
-apt-get install curl git
+apt-get install curl git -y
 
 # ZSH + Oh My ZSH avec thème custom
-apt-get install zsh
+apt-get install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Remove the fucking bell
+setterm -blength 0
+sed -rin 's/^# set bell-style none/set bell-style none/' /etc/inputrc
+
+# Change the ZSH Theme
+curl -o ~/.oh-my-zsh/themes/funkycustom.zsh-theme https://gitlab.matias49.eu/matias49/LinuxInstall/raw/master/funkycustom.zsh-theme
+sed -rin 's/robbyrussell/funkycustom/' ~/.zshrc
+
+# Adding the syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sed -rin 's/plugins=\(git\)/plugins=(git zsh-syntax-highlighting)/' ~/.zshrc
+
+source ~/.zshrc
