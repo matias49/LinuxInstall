@@ -12,7 +12,7 @@ select graphic in "Yes" "No"; do
     esac
 done
 echo $graphicInstall
-if[ "$graphicInstall" = false ] ; then
+if [ "$graphicInstall" = false ] ; then
   echo "Do you want to install a server? It will install openssh-server, fail2ban, ufw and disable Root login via SSH."
   select server in "Yes" "No"; do
     case $server in
