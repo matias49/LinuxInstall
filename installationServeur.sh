@@ -9,9 +9,11 @@
 # - screen
 FILE="/tmp/install.txt"
 SUBJECT="Notification for `cat /etc/hostname`'s install'"
-THEMEURL=""
-echo -n "Enter your email for notification"
+echo -n "Enter your email for notification : "
 read MAIL
+
+echo -n "Enter your custom ZSH theme URL : "
+echo $THEMEURL
 
 rm $FILE
 touch $FILE
