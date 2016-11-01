@@ -13,7 +13,7 @@ echo -n "Enter your email for notification : "
 read MAIL
 
 echo -n "Enter your custom ZSH theme URL : "
-echo $THEMEURL
+read THEMEURL
 
 rm $FILE
 touch $FILE
